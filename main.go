@@ -1,15 +1,15 @@
 package main
 
 import (
-	ca "certi/src/services/CA"
-	"certi/src/services/certificates"
+	"certificate-authority/src/services/authority"
+	"certificate-authority/src/services/certificates"
 	"fmt"
 	"net"
 )
 
 func main() {
 	fmt.Println("Hello, World!")
-	ca := ca.GetCA()
+	ca := authority.GetCA()
 	fmt.Println(" My Ca is: ", ca)
 
 	err := certificates.CreateCertificate(net.IPv4(127, 0, 0, 1))

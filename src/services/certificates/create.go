@@ -2,7 +2,7 @@ package certificates
 
 import (
 	"bytes"
-	ca "certi/src/services/CA"
+	"certificate-authority/src/services/authority"
 	"crypto/ed25519"
 	"crypto/rand"
 	"crypto/rsa"
@@ -25,7 +25,7 @@ func createEd25519Key() (ed25519.PrivateKey, ed25519.PublicKey, error) {
 
 func CreateCertificate(ip net.IP) error {
 
-	ca := ca.GetCA()
+	ca := authority.GetCA()
 
 	cert := &x509.Certificate{
 		SerialNumber: big.NewInt(2019),
